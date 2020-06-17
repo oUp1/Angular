@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 class Product {
     id: number;
@@ -8,13 +8,14 @@ class Product {
 @Component({
     moduleId: module.id,
     selector: 'my-table',
-    templateUrl: 'app.component.html',
+    templateUrl: 'app.component.html'
 })
 
 export class AppComponent implements OnInit {
     @Input("rows")
     rows: number;
 
+    @Output()
     products: Product[] = [
         { id: 1, name: "product 1", price: 100 },
         { id: 2, name: "product 2", price: 200 },
@@ -29,7 +30,11 @@ export class AppComponent implements OnInit {
     ];
 
     ngOnInit() {
-        console.log("some " + this.rows);
         this.products = this.products.slice(0, this.rows);
     }
+    @Output() onChanged = new EventEmitter<any>();
+    delete(id: any): void {
+        this.onChanged.emit(id);
+    }
+
 }

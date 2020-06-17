@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, ViewChild } from '@angular/core';
+import { AppComponent } from './app.component';
 
 @Component({
     moduleId: module.id,
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
     templateUrl: 'app-host.component.html',
 })
 
-export class AppHostComponent  {
+export class AppHostComponent {
+    @ViewChild(AppComponent)
+    component: AppComponent;
 
+    onChanged(id:any){
+        this.component.products = this.component.products.filter(product=>product.id!=id);
+    }
 }
