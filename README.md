@@ -6,3 +6,4 @@ To start working with Angular you should:
 2. npm install
 3. ng serve --open
 4. ng build --prod
+5. npm install @angular/flex-layout@latest --save
