@@ -1,10 +1,43 @@
-.header{
-    background-color: gray;
-    width: 98%;
-    text-align: center;
-    margin: 20px;
+.wrapper { 
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 0.5% 10% auto 15% 10% 0.5%;
+    grid-template-rows: 50px auto;
+    padding: 10px;
 }
-.tittle{
-    color: greenyellow;
-    font-size: 20px;
+.box-header{
+    grid-row: 1/1;
+    grid-column: 2/6;
+    background-color: silver;
+    border-radius: 10px;
+}
+.box-menu{
+    grid-row: 2/35;
+    grid-column: 5/6;
+    background-color: silver;
+    border-radius: 10px;
+}
+.box-slider{
+    grid-row: 2/55;
+    grid-column: 2/4;
+    background-color: silver;
+    border-radius: 10px;
+}
+.box-about{
+    grid-row: 2/35;
+    grid-column: 4/5;
+    background-color: silver;
+    border-radius: 10px;
+}
+.box-chat{
+    grid-row: 35/55;
+    grid-column: 4/6;
+    background-color: silver;
+    border-radius: 10px;
+}
+.box-canvas{
+    grid-row: 55/68;
+    grid-column: 2/6;
+    background-color: silver;
+    border-radius: 10px;
 }
