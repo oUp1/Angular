@@ -4,40 +4,54 @@
     grid-template-columns: 0.5% 10% auto 15% 10% 0.5%;
     grid-template-rows: 50px auto;
     padding: 10px;
+    
+    overflow: hidden;
 }
 .box-header{
     grid-row: 1/1;
     grid-column: 2/6;
+    
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }
 .box-menu{
     grid-row: 2/35;
     grid-column: 5/6;
+    
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }
 .box-slider{
     grid-row: 2/55;
     grid-column: 2/4;
+   
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }
 .box-about{
     grid-row: 2/35;
     grid-column: 4/5;
+
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }
 .box-chat{
     grid-row: 35/55;
     grid-column: 4/6;
+
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }
 .box-canvas{
-    grid-row: 55/68;
+    grid-row: 55/70;
     grid-column: 2/6;
+
     background-color: silver;
     border-radius: 10px;
+    position: relative;
 }

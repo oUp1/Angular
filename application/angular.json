@@ -14,7 +14,9 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
-            "assets": [],
+            "assets": [
+              "src/assets/"
+            ],
             "styles": [],
             "scripts": []
           },
@@ -35,6 +37,6 @@
   },
   "defaultProject": "application",
   "cli": {
-    "analytics": "e4bff169-8a7c-4646-bbb8-0a938627efe5"
+    "analytics": "baa11f44-cf72-43e3-8b19-9d33dc5e1d96"
   }
 }
