@@ -1,12 +1,19 @@
-p{
-    font-size: 20;
-}
-
 div{
-    background-color: orange;
-    text-align: center;
-    position: absolute;
-    border-radius: 10px;
     width: 100%;
-    border: red 2px solid;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+input{
+    flex-grow: 1;
+    background-color: orange;
+    max-height: 49.9px;
+    border: none;
+}
+h2{
+    flex-grow: 20;
+    max-height: 49.9px;
+    margin-top: 0px;
+    padding: 10px;
+    background-color: orange;
 }

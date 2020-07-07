@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+    constructor(private router: Router) { }
 
+    RedirectToLogin(): void {
+        this.router.navigate(['home/signin']);
+    }
+    RedirectToSignIn(): void {
+        console.log("RedirectToSignIn")
+    }
 }

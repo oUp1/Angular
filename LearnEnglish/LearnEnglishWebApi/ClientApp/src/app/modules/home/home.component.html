@@ -1,4 +1,4 @@
-<div class="wrapper" [ngStyle]="getWraperStyle()">
+<div class="wrapper">
     
     <div class="box-header">
         <header></header>
@@ -8,19 +8,8 @@
         
     </div>
     
-    <div class="box-slider">
-        <slider></slider>
+    <div class="box-сontent" [ngStyle]="getWraperStyle()">
+        <router-outlet></router-outlet>
     </div>
 
-    <div class="box-about">
-        
-    </div>
-    
-    <div class="box-chat">
-        
-    </div>
-    
-    <div class="box-canvas">
-        
-    </div>
 </div>

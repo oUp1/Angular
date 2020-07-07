@@ -1,57 +1,30 @@
 .wrapper { 
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 0.5% 10% auto 15% 10% 0.5%;
-    grid-template-rows: 50px auto;
-    padding: 10px;
-    
+    grid-template-columns: 10% 90%;
+    grid-template-rows: repeat(15, 49.9px);
     overflow: hidden;
 }
 .box-header{
     grid-row: 1/1;
-    grid-column: 2/6;
+    grid-column: 2/3;
     
-    background-color: silver;
-    border-radius: 10px;
+    background-color: orange;
     position: relative;
 }
 .box-menu{
-    grid-row: 2/35;
-    grid-column: 5/6;
+    grid-row: 1/16;
+    grid-column: 1/2;
     
-    background-color: silver;
-    border-radius: 10px;
+    background-color: orange;
     position: relative;
+    border-bottom: red 2px solid;
 }
-.box-slider{
-    grid-row: 2/55;
-    grid-column: 2/4;
+.box-сontent{
+    grid-row: 2/16;
+    grid-column: 2/3;
    
-    background-color: silver;
-    border-radius: 10px;
-    position: relative;
-}
-.box-about{
-    grid-row: 2/35;
-    grid-column: 4/5;
-
-    background-color: silver;
-    border-radius: 10px;
-    position: relative;
-}
-.box-chat{
-    grid-row: 35/55;
-    grid-column: 4/6;
-
-    background-color: silver;
-    border-radius: 10px;
-    position: relative;
-}
-.box-canvas{
-    grid-row: 55/70;
-    grid-column: 2/6;
-
-    background-color: silver;
-    border-radius: 10px;
+    border-left: red 2px solid;
+    border-top: red 2px solid;
+    border-bottom: red 2px solid;
     position: relative;
 }

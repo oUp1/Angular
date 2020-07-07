@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { timer } from 'rxjs';
+import { timer, from } from 'rxjs';
 import { isRegExp } from 'util';
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -12,12 +13,15 @@ import { isRegExp } from 'util';
 export class HomeComponent implements OnInit {
 
     count: number = 60;
-    isBiggest: boolean =  false;
+    isBiggest: boolean = false;
+
+    constructor(private router: Router) {
+    }
 
     getWraperStyle() {
         let backColor: string = `radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,0.5718662464985995) ${this.count}%, rgba(181,255,0,1) 100%)`
         let styles = {
-            "background": backColor
+            "background": "gray"
         };
         return styles;
     }
@@ -34,7 +38,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.observableTimer();
+        //this.observableTimer();
     }
 
 }

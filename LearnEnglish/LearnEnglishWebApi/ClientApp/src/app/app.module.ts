@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from 'app/modules/home/home.module';
+import { AccountModule } from 'app/modules/account/account.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -12,7 +13,8 @@ import { HomeModule } from 'app/modules/home/home.module';
         RouterModule.forRoot(routes),
         BrowserModule,
         FormsModule,
-        HomeModule
+        HomeModule,
+        AccountModule
     ],
     bootstrap: [AppComponent]
 })
