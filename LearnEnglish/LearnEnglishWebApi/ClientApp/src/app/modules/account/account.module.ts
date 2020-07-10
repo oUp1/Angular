@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component'
 import { LoginComponent } from './login/login.component'
+import { ReactiveFormsModule }   from '@angular/forms';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -11,7 +12,8 @@ import { from } from 'rxjs';
     imports: [
         BrowserModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class AccountModule { }

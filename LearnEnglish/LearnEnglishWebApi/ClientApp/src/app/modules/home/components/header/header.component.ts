@@ -12,9 +12,9 @@ export class HeaderComponent {
     constructor(private router: Router) { }
 
     RedirectToLogin(): void {
-        this.router.navigate(['home/signin']);
+        this.router.navigate(['home/login']);
     }
     RedirectToSignIn(): void {
-        console.log("RedirectToSignIn")
+        this.router.navigate(['home/signin']);
     }
 }
