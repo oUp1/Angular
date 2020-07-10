@@ -1,40 +1,47 @@
 <div class="wrapper">
 
-    <form novalidate [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm)">
+    <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
         <label>Login Form</label>
         <hr />
 
         <div class="form-group">
             <label for="name">Your Name </label>
-            <label *ngIf="formErrors.name" [style.color]="'red'">&nbsp;{{formErrors.name}}</label>
+            <label *ngIf="formErrors.name" [style.color]="'red'">&nbsp;*{{formErrors.name}}</label>
 
             <input type="text" class="form-control" id="name" formControlName="name">
 
+
         </div>
 
 
         <div class="form-group">
-            <label for="birthday">Birthday date</label>
+          <label for="birthday">Birthday date</label>
+          <label *ngIf="formErrors.birthday" [style.color]="'red'">&nbsp;*{{formErrors.birthday}}</label>
 
-            <input type="text" class="form-control" id="birthday" formControlName="birthday">
+          <input type="text" class="form-control" id="birthday" formControlName="birthday">
 
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-
-            <input type="text" class="form-control" id="email" formControlName="email">
 
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
+          <label for="email">Email</label>
+          <label *ngIf="formErrors.email" [style.color]="'red'">&nbsp;*{{formErrors.email}}</label>
 
-            <input type="text" class="form-control" id="password" formControlName="password">
+          <input type="text" class="form-control" id="email" formControlName="email">
+
 
         </div>
 
-        <input type="submit" class="btn btn-degault" [disabled]="signinForm.invalid" value="Login">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <label *ngIf="formErrors.password" [style.color]="'red'">&nbsp;*{{formErrors.password}}</label>
+
+          <input type="text" class="form-control" id="password" formControlName="password">
+
+
+        </div>
+
+        <input type="submit" class="btn btn-degault" [disabled]="loginForm.invalid" value="Login">
 
     </form>
 </div>

@@ -12,23 +12,23 @@ export class LoginComponent implements OnInit {
 
     constructor(private fb: FormBuilder) { }
 
-    signinForm: FormGroup;
+    loginForm: FormGroup;
     formErrors = {
         "name": "",
         "password": "",
-        "emil": "",
-        "role": ""
+        "birthday": "",
+        "email": ""
     }
     validationMessages = {
         "name": {
             "required": "required",
-            "minLength": "minLength",
-            "maxLength": "maxLength"
+            "minlength": "minLength",
+            "maxlength": "maxLength"
         },
         "password": {
             "required": "required",
-            "minLength": "minLength",
-            "maxLength": "maxLength"
+            "minlength": "minLength",
+            "maxlength": "maxLength"
         },
         "birthday": {
             "required": "required",
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     }
 
     buildForm() {
-        this.signinForm = this.fb.group({
+        this.loginForm = this.fb.group({
             "name": ["", [
                 Validators.required,
                 Validators.minLength(4),
@@ -64,14 +64,14 @@ export class LoginComponent implements OnInit {
             ]]
         });
 
-        this.signinForm.valueChanges.subscribe(data => this.onValueChange(data));
+        this.loginForm.valueChanges.subscribe(data => this.onValueChange(data));
 
         this.onValueChange();
     }
 
     onValueChange(data?: any) {
-        if (!this.signinForm) return;
-        let form = this.signinForm;
+        if (!this.loginForm) return;
+        let form = this.loginForm;
 
         for (let field in this.formErrors) {
             this.formErrors[field] = "";
