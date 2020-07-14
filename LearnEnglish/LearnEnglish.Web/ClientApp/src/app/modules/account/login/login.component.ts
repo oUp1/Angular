@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { LoginValidation } from '../../../shared/validation/account.validation'
+import { from } from 'rxjs';
+import { ValidationService } from 'src/app/core/services/validation.service';
 
 
 @Component({
@@ -9,38 +13,18 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 
 export class LoginComponent implements OnInit {
-
-    constructor(private fb: FormBuilder) { }
-
     loginForm: FormGroup;
-    formErrors = {
-        "name": "",
-        "password": "",
-        "birthday": "",
-        "email": ""
-    }
-    validationMessages = {
-        "name": {
-            "required": "required",
-            "minlength": "minLength",
-            "maxlength": "maxLength"
-        },
-        "password": {
-            "required": "required",
-            "minlength": "minLength",
-            "maxlength": "maxLength"
-        },
-        "birthday": {
-            "required": "required",
-        },
-        "email": {
-            "required": "required",
-            "pattern": "wrong pattern"
-        }
-    }
+    formErrors : any;
 
+    constructor(private fb: FormBuilder, @Inject('LoginValidation') private validationService: ValidationService<LoginValidation>){
+        this.formErrors = validationService.formErrors;
+     }
+    
     ngOnInit() {
         this.buildForm();
+    }
+    onSubmit(form) {
+
     }
 
     buildForm() {
@@ -64,29 +48,9 @@ export class LoginComponent implements OnInit {
             ]]
         });
 
-        this.loginForm.valueChanges.subscribe(data => this.onValueChange(data));
+        this.loginForm.valueChanges.subscribe(data => this.validationService.onValueChange(this.loginForm, data));
 
-        this.onValueChange();
+        this.validationService.onValueChange(this.loginForm);
     }
 
-    onValueChange(data?: any) {
-        if (!this.loginForm) return;
-        let form = this.loginForm;
-
-        for (let field in this.formErrors) {
-            this.formErrors[field] = "";
-            let control = form.get(field);
-
-            if (control && control.dirty && !control.valid) {
-                let message = this.validationMessages[field];
-                for (let key in control.errors) {
-                    this.formErrors[field] += message[key] + " ";
-                }
-            }
-        }
-    }
-
-    onSubmit(form) {
-
-    }
 }

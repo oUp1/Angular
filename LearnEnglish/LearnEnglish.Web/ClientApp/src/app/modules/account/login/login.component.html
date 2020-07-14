@@ -18,7 +18,7 @@
           <label for="birthday">Birthday date</label>
           <label *ngIf="formErrors.birthday" [style.color]="'red'">&nbsp;*{{formErrors.birthday}}</label>
 
-          <input type="text" class="form-control" id="birthday" formControlName="birthday">
+          <input type="date" class="form-control" id="birthday" formControlName="birthday">
 
 
         </div>

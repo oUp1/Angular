@@ -1,30 +1,28 @@
 <div class="wrapper">
+
     <form novalidate [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm)">
         <label>Sign In Form</label>
-        <hr/>
+        <hr />
 
         <div class="form-group">
-            <label for="login">Login</label>
+          <label for="email">Email</label>
+          <label *ngIf="formErrors.email" [style.color]="'red'">&nbsp;*{{formErrors.email}}</label>
 
-            <input type="text" 
-                   class="form-control" 
-                   id="login" 
-                   formControlName="login">
+          <input type="text" class="form-control" id="email" formControlName="email">
+
 
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
+          <label for="password">Password</label>
+          <label *ngIf="formErrors.password" [style.color]="'red'">&nbsp;*{{formErrors.password}}</label>
 
-            <input type="text" 
-                   class="form-control" 
-                   id="password" 
-                   formControlName="password">
+          <input type="text" class="form-control" id="password" formControlName="password">
+
 
         </div>
 
-        <input type="submit" class="btn btn-degault"
-               [disabled]="signinForm.invalid" value="Sign In">
+        <input type="submit" class="btn btn-degault" [disabled]="signinForm.invalid" value="Login">
 
     </form>
 </div>

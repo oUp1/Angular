@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace LearnEnglish.Web.Controllers
 {
 
-    [Route("api/getUser")]
     [ApiController]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
@@ -18,11 +18,15 @@ namespace LearnEnglish.Web.Controllers
         {
             _userRepository = userRepository;
         }
-        // GET: api/ListOf
         [HttpGet]
         public Task<IEnumerable<User>> Get()
         {
             return _userRepository.GetAllAsync();
+        }
+        [HttpPost("createUser")]
+        public void Create(User user)
+        {
+            _userRepository.InsertAsync(user);
         }
     }
 }
