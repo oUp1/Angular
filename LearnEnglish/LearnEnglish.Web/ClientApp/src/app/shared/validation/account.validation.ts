@@ -1,40 +1,43 @@
 import { Validation } from "../interfaces/validation.interface";
 
-export class LoginValidation implements Validation{
+export class LoginValidation implements Validation {
+    validationMessages: any;
+    formErrors: any;
 
+    constructor() {
+        this.validationMessages = {
+            "name": {
+                "required": "required",
+                "minlength": "minLength 4",
+                "maxlength": "maxLength 15"
+            },
+            "password": {
+                "required": "required",
+                "minlength": "minLength 6",
+                "maxlength": "maxLength 15"
+            },
+            "birthday": {
+                "required": "required",
+            },
+            "email": {
+                "required": "required",
+                "pattern": "wrong pattern"
+            }
+        };
 
-    validationMessages = {
-        "name": {
-            "required": "required",
-            "minlength": "minLength 4",
-            "maxlength": "maxLength 15"
-        },
-        "password": {
-            "required": "required",
-            "minlength": "minLength 6",
-            "maxlength": "maxLength 15"
-        },
-        "birthday": {
-            "required": "required",
-        },
-        "email": {
-            "required": "required",
-            "pattern": "wrong pattern"
-        }
-    }
-
-    formErrors = {
-        "name": "",
-        "password": "",
-        "birthday": "",
-        "email": ""
+        this.formErrors = {
+            "name": "",
+            "password": "",
+            "birthday": "",
+            "email": ""
+        };
     }
 }
-export class SignInValidation implements Validation{
+export class SignInValidation implements Validation {
     validationMessages: any;
-    formErrors : any;
+    formErrors: any;
 
-    constructor(){
+    constructor() {
         this.validationMessages = {
             "password": {
                 "required": "required",
